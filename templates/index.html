@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f8f9fa] min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-4xl w-full pb-10">
+        
+        <div class="text-center mb-14">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#111827] leading-tight mb-4 tracking-tight">
+                Welcome to the Heart<br>Disease Prediction Portal
+            </h1>
+            <p class="text-[#4b5563] text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+                Please select your user profile to check the status of your heart function and receive personalized recommendations. Our AI-driven system provides a comprehensive cardiovascular risk assessment based on your inputs.
+            </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center gap-8 items-stretch">
+
+            <a href="/commonman" class="block bg-white rounded-[2rem] p-10 w-full md:w-[400px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+                
+                <div class="w-20 h-20 bg-[#ffeef0] text-[#ff4d6d] rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-[#111827] mb-4">User</h2>
+                
+                <p class="text-[#6b7280] mb-10 leading-relaxed text-sm">
+                    Take a general health check. No clinical lab reports or medical knowledge required.
+                </p>
+                
+                <div class="mt-auto text-[#ff4d6d] font-semibold flex items-center group-hover:text-[#e03154] transition-colors">
+                    Start Screening
+                    <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <a href="/professional" class="block bg-white rounded-[2rem] p-10 w-full md:w-[400px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+                
+                <div class="w-20 h-20 bg-[#e6fffa] text-[#0d9488] rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-[#111827] mb-4">Medical Professional (doctor)</h2>
+                
+                <p class="text-[#6b7280] mb-10 leading-relaxed text-sm">
+                    Access deep clinical triage, ECG laboratory analysis, and deterministic diagnostic modeling tools.
+                </p>
+                
+                <div class="mt-auto text-[#0d9488] font-semibold flex items-center group-hover:text-[#0f766e] transition-colors">
+                    Access Terminal
+                    <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

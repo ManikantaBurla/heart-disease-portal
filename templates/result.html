@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diagnostic Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 antialiased min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        {% if not escalated %}
+            <div class="bg-emerald-500 px-8 py-10 text-center text-white">
+                <svg class="w-16 h-16 mx-auto mb-4 text-emerald-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h1 class="text-3xl font-bold tracking-tight">Excellent News!</h1>
+                <p class="text-emerald-50 mt-2 text-lg">Your cardiovascular risk is low ({{ risk }}%).</p>
+            </div>
+            <div class="p-8">
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">Based on our AI analysis of your daily habits, your health profile looks great. Maintaining this lifestyle is the best way to ensure long-term wellness.</p>
+                
+                <div class="bg-slate-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-8">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Recommended Preventive Habits:</h3>
+                    <ul class="list-disc list-inside text-slate-600 space-y-2">
+                        <li>Aim for 150 minutes of moderate exercise per week.</li>
+                        <li>Maintain a balanced diet rich in leafy greens.</li>
+                        <li>Keep hydrated and prioritize 7-8 hours of sleep.</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="/" class="inline-block bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 px-8 rounded-xl transition-colors">Return Home</a>
+                </div>
+            </div>
+
+        {% else %}
+            
+            {% if prediction == 0 %}
+                <div class="bg-emerald-500 px-8 py-10 text-center text-white">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-emerald-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h1 class="text-3xl font-bold tracking-tight">Clinical Clearance</h1>
+                    <p class="text-emerald-50 mt-2 text-lg">No active signs of heart disease detected.</p>
+                </div>
+                <div class="p-8">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">Our deep diagnostic neural network (<strong>{{ confidence }}% confidence</strong>) analyzed your clinical metrics and found no critical cardiovascular blockages.</p>
+                    
+                    <div class="bg-slate-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-8">
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Next Steps:</h3>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2">
+                            <li>Schedule your regular annual checkup next year.</li>
+                            <li>Monitor your blood pressure to maintain this healthy baseline.</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <a href="/" class="inline-block bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 px-8 rounded-xl transition-colors">Start New Patient</a>
+                    </div>
+                </div>
+            
+            {% else %}
+                <div class="bg-amber-500 px-8 py-10 text-center text-white">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-amber-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <h1 class="text-3xl font-bold tracking-tight">Medical Attention Advised</h1>
+                    <p class="text-amber-50 mt-2 text-lg">AI identified abnormal cardiovascular markers.</p>
+                </div>
+                <div class="p-8">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">Our clinical model detected patterns that strongly correlate with cardiovascular disease (<strong>{{ confidence }}% confidence</strong>). This is an AI screening, not a final medical diagnosis.</p>
+                    
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-8">
+                        <h3 class="text-lg font-bold text-amber-900 mb-3">Immediate Action Plan:</h3>
+                        <ul class="list-disc list-inside text-amber-800 space-y-2">
+                            <li><strong>Do not panic.</strong> Many heart conditions are easily managed.</li>
+                            <li>Please schedule an appointment with a certified doctor for an official evaluation.</li>
+                            <li>Avoid strenuous physical exertion until cleared by a professional.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                        <button onclick="window.print()" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 px-8 rounded-xl transition-colors flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                            Print Report
+                        </button>
+                        <a href="/" class="text-slate-500 hover:text-slate-700 font-medium transition-colors">Return to Portal</a>
+                    </div>
+                </div>
+            {% endif %}
+            
+        {% endif %}
+    </div>
+
+</body>
+</html>
